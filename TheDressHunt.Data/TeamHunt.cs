@@ -18,6 +18,7 @@ namespace TheDressHunt.Data
         [MinLength(2, ErrorMessage = "Must be at least 2 characters")]
         [MaxLength(100, ErrorMessage = "Too many characters in this field")]
         public string TeamName { get; set; }
+        public DateTime DateOfHunt { get; set; }
 
         [ForeignKey(nameof(Hunt))]
         public int HuntId { get; set; }

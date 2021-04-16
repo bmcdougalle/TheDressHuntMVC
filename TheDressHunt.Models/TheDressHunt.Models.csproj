@@ -63,6 +63,10 @@
     <Compile Include="TheReview\EditReview.cs" />
     <Compile Include="TheReview\ReviewDetail.cs" />
     <Compile Include="TheReview\ReviewListItem.cs" />
+    <Compile Include="TheShop\CreateShop.cs" />
+    <Compile Include="TheShop\EditShop.cs" />
+    <Compile Include="TheShop\ShopDetail.cs" />
+    <Compile Include="TheShop\ShopListItem.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

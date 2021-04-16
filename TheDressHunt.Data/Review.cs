@@ -25,6 +25,10 @@ namespace TheDressHunt.Data
         [MaxLength(500, ErrorMessage = "Too many characters in this field")]
         public string Content { get; set; }
 
+        [Required]
+        public DateTimeOffset CreatedUtc { get; set; }
+        public DateTimeOffset? ModifiedUtc { get; set; }
+
         public bool HuntRating { get; set; }
     }
 }

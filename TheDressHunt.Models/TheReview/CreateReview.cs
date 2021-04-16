@@ -16,5 +16,12 @@ namespace TheDressHunt.Models.TheReview
 
         [MaxLength(8000)]
         public string Content { get; set; }
+
+        [Display(Name = "Rating")]
+        public bool HuntRating { get; set; }
+
+        [Required]
+        public DateTimeOffset CreatedUtc { get; set; }
+        public DateTimeOffset? ModifiedUtc { get; set; }
     }
 }

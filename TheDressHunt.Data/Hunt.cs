@@ -17,6 +17,11 @@ namespace TheDressHunt.Data
         [ForeignKey(nameof(Shop))]
         public int? ShopId { get; set; }
         public virtual Shop Shop { get; set; }
+        public DateTime DateofHunt { get; set; }
+
+        [Required]
+        public DateTimeOffset CreatedUtc { get; set; }
+        public DateTimeOffset? ModifiedUtc { get; set; }
 
         [Required]
         [Display(Name = "What's The Occasion?")]

@@ -19,5 +19,12 @@ namespace TheDressHunt.Models.TheHunt
         [Display(Name = "Color Scheme")]
         public string ColorScheme { get; set; }
 
+        [Display(Name = "Created")]
+        public DateTimeOffset CreatedUtc { get; set; }
+
+        public int? ShopId { get; set; }
+
+        public virtual ShopListItem Shop { get; set; }
+
     }
 }
