@@ -54,7 +54,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="TheHunt\CreateHunt.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TheHunt\EditHunt.cs" />
+    <Compile Include="TheHunt\HuntDetail.cs" />
+    <Compile Include="TheHunt\HuntListItem.cs" />
+    <Compile Include="TheReview\CreateReview.cs" />
+    <Compile Include="TheReview\EditReview.cs" />
+    <Compile Include="TheReview\ReviewDetail.cs" />
+    <Compile Include="TheReview\ReviewListItem.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
