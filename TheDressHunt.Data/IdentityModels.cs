@@ -6,6 +6,7 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
+using TheDressHunt.Data;
 
 namespace TheDressHunt.Models
 {
@@ -40,6 +41,11 @@ namespace TheDressHunt.Models
         {
             return new ApplicationDbContext();
         }
+
+        public DbSet<Hunt> Hunts { get; set; }
+        public DbSet<Shop> Shops { get; set; }
+        public DbSet<TeamHunt> TeamHunts { get; set; }
+        public DbSet<Review> Reviews { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

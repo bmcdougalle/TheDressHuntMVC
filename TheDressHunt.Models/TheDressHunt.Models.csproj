@@ -68,5 +68,11 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TheDressHunt.Data\TheDressHunt.Data.csproj">
+      <Project>{AE2C3A74-C3C4-4976-B143-A951797BDE22}</Project>
+      <Name>TheDressHunt.Data</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
