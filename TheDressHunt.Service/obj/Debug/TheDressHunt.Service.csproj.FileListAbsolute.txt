@@ -14,3 +14,9 @@ C:\Users\billy\Desktop\ElevenFiftyProjects\RedBadge\The Dress Hunt\TheDressHunt\
 C:\Users\billy\Desktop\ElevenFiftyProjects\RedBadge\The Dress Hunt\TheDressHunt\TheDressHunt.Service\obj\Debug\TheDressHunt.Service.csproj.CopyComplete
 C:\Users\billy\Desktop\ElevenFiftyProjects\RedBadge\The Dress Hunt\TheDressHunt\TheDressHunt.Service\obj\Debug\TheDressHunt.Service.dll
 C:\Users\billy\Desktop\ElevenFiftyProjects\RedBadge\The Dress Hunt\TheDressHunt\TheDressHunt.Service\obj\Debug\TheDressHunt.Service.pdb
+C:\Users\billy\Desktop\ElevenFiftyProjects\RedBadge\The Dress Hunt\TheDressHunt\TheDressHunt.Service\bin\Debug\TheDressHunt.Data.dll
+C:\Users\billy\Desktop\ElevenFiftyProjects\RedBadge\The Dress Hunt\TheDressHunt\TheDressHunt.Service\bin\Debug\TheDressHunt.Models.dll
+C:\Users\billy\Desktop\ElevenFiftyProjects\RedBadge\The Dress Hunt\TheDressHunt\TheDressHunt.Service\bin\Debug\TheDressHunt.Data.pdb
+C:\Users\billy\Desktop\ElevenFiftyProjects\RedBadge\The Dress Hunt\TheDressHunt\TheDressHunt.Service\bin\Debug\TheDressHunt.Data.dll.config
+C:\Users\billy\Desktop\ElevenFiftyProjects\RedBadge\The Dress Hunt\TheDressHunt\TheDressHunt.Service\bin\Debug\TheDressHunt.Models.pdb
+C:\Users\billy\Desktop\ElevenFiftyProjects\RedBadge\The Dress Hunt\TheDressHunt\TheDressHunt.Service\bin\Debug\TheDressHunt.Models.dll.config

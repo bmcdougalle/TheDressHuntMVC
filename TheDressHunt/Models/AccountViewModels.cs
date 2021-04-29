@@ -62,6 +62,9 @@ namespace TheDressHunt.Models
         [Display(Name = "Password")]
         public string Password { get; set; }
 
+        public string UserRoles { get; set; }
+        public int? UserRoleId { get; set; }
+
         [Display(Name = "Remember me?")]
         public bool RememberMe { get; set; }
     }

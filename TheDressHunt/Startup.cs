@@ -26,16 +26,17 @@ namespace TheDressHunt
             if (!roleManager.RoleExists("Admin"))
             {
                 //admin role create
-                var role = new Microsoft.AspNet.Identity.EntityFramework.IdentityRole();
+                var role = new IdentityRole();
                 role.Name = "Admin";
                 roleManager.Create(role);
 
                 //creating admin super user to maintain site
                 var user = new ApplicationUser();
-                user.UserName = "jack";
-                user.Email = "jFrost@gmail.com";
+                user.UserName = "black45";
+                user.Email = "bFrost@gmail.com";
 
-                string userPWD = "Bm+28654856";
+
+                string userPWD = "Nov1150@317";
                 var chkUser = UserManager.Create(user, userPWD);
                 if (chkUser.Succeeded)
                 {
@@ -43,10 +44,34 @@ namespace TheDressHunt
                 }
 
             }
+
+            //if (!roleManager.RoleExists("Tester"))
+            //{
+            //    //admin role create
+            //    var role = new IdentityRole();
+            //    role.Name = "Tester";
+            //    roleManager.Create(role);
+
+            //    //creating admin super user to maintain site
+            //    var user = new ApplicationUser();
+            //    user.UserName = "black224125";
+            //    user.Email = "bFrost2221@gmail.com";
+
+
+            //    string userPWD = "Nov1150@317";
+            //    var chkUser = UserManager.Create(user, userPWD);
+            //    bool item = chkUser.Succeeded;
+            //    if (chkUser.Succeeded)
+            //    {
+            //        
+            //        var result1 = UserManager.AddToRole(user.Id, "Tester");
+            //    }
+
+            //}
             //creating manager role
             if (!roleManager.RoleExists("Manager"))
             {
-                var role = new Microsoft.AspNet.Identity.EntityFramework.IdentityRole();
+                var role = new IdentityRole();
                 role.Name = "Manager";
                 roleManager.Create(role);
             }
@@ -54,7 +79,7 @@ namespace TheDressHunt
             //create user
             if (!roleManager.RoleExists("User"))
             {
-                var role = new Microsoft.AspNet.Identity.EntityFramework.IdentityRole();
+                var role = new IdentityRole();
                 role.Name = "User";
                 roleManager.Create(role);
 

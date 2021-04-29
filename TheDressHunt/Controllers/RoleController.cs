@@ -12,24 +12,27 @@ namespace TheDressHunt.Controllers
     public class RoleController : Controller
     {
         // GET: Role
-        ApplicationDbContext context;
         public ActionResult Index()
         {
+
             if (User.Identity.IsAuthenticated)
             {
+
 
                 if (!IsAdminUser())
                 {
                     return RedirectToAction("Index", "Home");
                 }
-
             }
             else
             {
                 return RedirectToAction("Index", "Home");
             }
+
+            ApplicationDbContext context = new ApplicationDbContext();
             var Roles = context.Roles.ToList();
             return View(Roles);
+
         }
         public bool IsAdminUser()
         {

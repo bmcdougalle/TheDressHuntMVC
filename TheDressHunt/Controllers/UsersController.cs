@@ -26,13 +26,13 @@ namespace TheDressHunt.Controllers
                 {
                     ViewBag.displayMenu = "Yes";
                 }
-                return View();
+                return View("Index");
             }
             else
             {
                 ViewBag.Name = "Not Logged In";
             }
-            return View();
+            return View("Index");
         }
         public bool IsAdminUser()
         {

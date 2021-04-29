@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace TheDressHunt.Models.TheReview
 {
-    class ReviewListItem
+    public class ReviewListItem
     {
         public int ReviewId { get; set; }
 

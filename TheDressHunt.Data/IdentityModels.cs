@@ -17,8 +17,8 @@ namespace TheDressHunt.Models
         public string Location { get; set; }
 
         [Range(15, 60)]
-        public int Age { get; set; }
-        public bool HasHunted { get; set; }
+        public int? Age { get; set; }
+        public bool? HasHunted { get; set; }
 
         //public int HuntId { get; set; }
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)

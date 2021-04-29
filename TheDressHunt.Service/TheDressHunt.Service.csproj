@@ -54,11 +54,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="HuntService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReviewService.cs" />
+    <Compile Include="ShopService.cs" />
+    <Compile Include="TeamHuntService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TheDressHunt.Data\TheDressHunt.Data.csproj">
+      <Project>{AE2C3A74-C3C4-4976-B143-A951797BDE22}</Project>
+      <Name>TheDressHunt.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TheDressHunt.Models\TheDressHunt.Models.csproj">
+      <Project>{66F45F4E-2008-4FE3-A956-9DA2FDD984EF}</Project>
+      <Name>TheDressHunt.Models</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

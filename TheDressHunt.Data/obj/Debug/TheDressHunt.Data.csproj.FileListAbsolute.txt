@@ -14,3 +14,7 @@ C:\Users\billy\Desktop\ElevenFiftyProjects\RedBadge\The Dress Hunt\TheDressHunt\
 C:\Users\billy\Desktop\ElevenFiftyProjects\RedBadge\The Dress Hunt\TheDressHunt\TheDressHunt.Data\obj\Debug\TheDressHunt.Data.csproj.CopyComplete
 C:\Users\billy\Desktop\ElevenFiftyProjects\RedBadge\The Dress Hunt\TheDressHunt\TheDressHunt.Data\obj\Debug\TheDressHunt.Data.dll
 C:\Users\billy\Desktop\ElevenFiftyProjects\RedBadge\The Dress Hunt\TheDressHunt\TheDressHunt.Data\obj\Debug\TheDressHunt.Data.pdb
+C:\Users\billy\Desktop\ElevenFiftyProjects\RedBadge\The Dress Hunt\TheDressHunt\TheDressHunt.Data\obj\Debug\TheDressHunt.Data.Migrations.initial.resources
+C:\Users\billy\Desktop\ElevenFiftyProjects\RedBadge\The Dress Hunt\TheDressHunt\TheDressHunt.Data\obj\Debug\TheDressHunt.Data.csproj.GenerateResource.cache
+C:\Users\billy\Desktop\ElevenFiftyProjects\RedBadge\The Dress Hunt\TheDressHunt\TheDressHunt.Data\obj\Debug\TheDressHunt.Data.Migrations.update1.resources
+C:\Users\billy\Desktop\ElevenFiftyProjects\RedBadge\The Dress Hunt\TheDressHunt\TheDressHunt.Data\obj\Debug\TheDressHunt.Data.Migrations.userchange.resources

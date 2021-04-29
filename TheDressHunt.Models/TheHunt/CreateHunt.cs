@@ -10,6 +10,9 @@ namespace TheDressHunt.Models.HuntCreate
 {
     public class CreateHunt
     {
+
+        public DateTime DaTeOfHunt { get; set; }
+        public string City { get; set; }
         [Required]
         [Display(Name = "What's The Occasion?")]
         [MinLength(2, ErrorMessage = "Please enter at least 2 characters")]

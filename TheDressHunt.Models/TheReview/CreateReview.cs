@@ -22,6 +22,5 @@ namespace TheDressHunt.Models.TheReview
 
         [Required]
         public DateTimeOffset CreatedUtc { get; set; }
-        public DateTimeOffset? ModifiedUtc { get; set; }
     }
 }
