@@ -20,11 +20,11 @@ namespace TheDressHunt.Controllers
             return View();
         }
 
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create(CreateReview model)
-        {
+        //[HttpPost]
+        //[ValidateAntiForgeryToken]
+        //public ActionResult Create(CreateReview model)
+        //{
 
-        }
+        //}
     }
 }
