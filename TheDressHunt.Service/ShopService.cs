@@ -4,7 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TheDressHunt.Data;
-using TheDressHunt.Models;
 using TheDressHunt.Models.TheShop;
 
 namespace TheDressHunt.Service
