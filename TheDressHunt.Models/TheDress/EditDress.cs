@@ -5,14 +5,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TheDressHunt.Data
+namespace TheDressHunt.Models.TheDress
 {
-    public class Dress
+    public class EditDress
     {
-        [Key]
         public int DressId { get; set; }
-        public int ShopId { get; set; }
-        public Guid OwnerId { get; set; }
 
         [Display(Name = "Dress Size")]
         public string DressSize { get; set; }

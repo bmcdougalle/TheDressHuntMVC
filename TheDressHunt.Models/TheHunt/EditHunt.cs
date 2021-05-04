@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TheDressHunt.Data;
 
 namespace TheDressHunt.Models.TheHunt
 {
@@ -27,7 +28,11 @@ namespace TheDressHunt.Models.TheHunt
         [Display(Name = "Color Scheme")]
         public string ColorScheme { get; set; }
 
-        public int ShopId { get; set; }
+        public int? ShopId { get; set; }
+        public virtual Shop Shop { get; set; }
+
+        public int? TeamId { get; set; }
+        public virtual TeamHunt TeamHunt { get; set; }
 
 
     }

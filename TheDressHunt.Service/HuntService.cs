@@ -30,8 +30,7 @@ namespace TheDressHunt.Service
                     ColorScheme = model.ColorScheme,
                     TypeOfOccasion = model.TypeOfOccasion,
                     DressType = model.DressType,
-
-
+                    TeamId = model.TeamId
 
                 };
 
@@ -54,10 +53,37 @@ namespace TheDressHunt.Service
                         e =>
                         new HuntListItem
                         {
-
+                            HuntId = e.HuntId,
+                            DateofHunt = e.DateofHunt,
+                            TeamId = e.TeamId,
+                            TeamName = e.TeamHunt.TeamName
                         }
                     );
                 return query.ToArray();
+            }
+        }
+
+        public HuntDetail GetHuntById(int id)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                    .Hunts
+                    .Single(e => e.HuntId == id && e.OwnerId == _userId);
+                return
+                    new HuntDetail
+                    {
+                        HuntId = entity.HuntId,
+                        DateOfHunt = entity.DateofHunt,
+                        City = entity.City,
+                        ColorScheme = entity.ColorScheme,
+                        DressType = entity.DressType,
+                        ShopId = entity.ShopId,
+                        Shop = new Models.TheShop.ShopListItem() { ShopId = entity.Shop.ShopId, Name = entity.Shop.Name, Location = entity.Shop.Location},
+                        TeamId = entity.TeamId,
+                        Team = new Models.TheTeamHunt.TeamHuntListItem() { TeamId = entity.TeamHunt.TeamId, TeamName = entity.TeamHunt.TeamName }
+                    };
             }
         }
 
@@ -76,6 +102,8 @@ namespace TheDressHunt.Service
                 entity.City = model.City;
                 entity.ColorScheme = model.ColorScheme;
                 entity.DressType = model.DressType;
+                entity.ShopId = model.ShopId;
+                entity.TeamId = model.TeamId;
 
                 return ctx.SaveChanges() == 1;
             }

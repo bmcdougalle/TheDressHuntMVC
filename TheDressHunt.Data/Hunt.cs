@@ -19,6 +19,11 @@ namespace TheDressHunt.Data
         public virtual Shop Shop { get; set; }
         public DateTime DateofHunt { get; set; }
 
+        [ForeignKey(nameof(TeamHunt))]
+        public int? TeamId { get; set; }
+        public virtual TeamHunt TeamHunt { get; set; }
+
+
         [Required]
         public DateTimeOffset CreatedUtc { get; set; }
         public DateTimeOffset? ModifiedUtc { get; set; }
@@ -42,6 +47,5 @@ namespace TheDressHunt.Data
         public string ColorScheme { get; set; }
 
         public string City { get; set; }
-        public virtual ICollection<Shop> Shops { get; set; } = new List<Shop>();
     }
 }

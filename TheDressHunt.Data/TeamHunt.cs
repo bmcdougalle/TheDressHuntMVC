@@ -18,10 +18,13 @@ namespace TheDressHunt.Data
         [MinLength(2, ErrorMessage = "Must be at least 2 characters")]
         [MaxLength(100, ErrorMessage = "Too many characters in this field")]
         public string TeamName { get; set; }
-        public DateTime DateOfHunt { get; set; }
 
-        [ForeignKey(nameof(Hunt))]
-        public int HuntId { get; set; }
-        public virtual Hunt Hunt { get; set; }
+
+        //[ForeignKey(nameof(Participant))]
+        //public int ParticipantId {get; set;}
+        //public virtual Participant Participant {get; set;}
+        //public List<Participant> Participants {get; set;} = new List<Participant>();
+
+        public virtual ICollection<Hunt> Hunts { get; set; } = new List<Hunt>();
     }
 }

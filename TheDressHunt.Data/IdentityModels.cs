@@ -46,6 +46,7 @@ namespace TheDressHunt.Data
         public DbSet<Shop> Shops { get; set; }
         public DbSet<TeamHunt> TeamHunts { get; set; }
         public DbSet<Review> Reviews { get; set; }
+        public DbSet<Dress> Dresses { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

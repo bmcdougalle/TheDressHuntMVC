@@ -57,6 +57,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="TheDress\CreateDress.cs" />
+    <Compile Include="TheDress\DressDetail.cs" />
+    <Compile Include="TheDress\DressListItem.cs" />
+    <Compile Include="TheDress\EditDress.cs" />
     <Compile Include="TheHunt\CreateHunt.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TheHunt\EditHunt.cs" />
@@ -70,6 +74,10 @@
     <Compile Include="TheShop\EditShop.cs" />
     <Compile Include="TheShop\ShopDetail.cs" />
     <Compile Include="TheShop\ShopListItem.cs" />
+    <Compile Include="TheTeamHunt\CreateTeamHunt.cs" />
+    <Compile Include="TheTeamHunt\EditTeamHunt.cs" />
+    <Compile Include="TheTeamHunt\TeamHuntDetail.cs" />
+    <Compile Include="TheTeamHunt\TeamHuntListItem.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

@@ -11,6 +11,7 @@ namespace TheDressHunt.Models.TheShop
     public class EditShop
     {
         public int ShopId { get; set; }
+
         [Required]
         [Display(Name = "Shop Name")]
         [MinLength(2, ErrorMessage = "Please enter at least 2 characters")]

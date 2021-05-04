@@ -33,5 +33,8 @@ namespace TheDressHunt.Models.HuntCreate
 
         public int? ShopId { get; set; }
         public virtual Shop Shop { get; set; }
+
+        public int? TeamId { get; set; }
+        public virtual TeamHunt TeamHunt { get; set; }
     }
 }
