@@ -9,7 +9,7 @@
 
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar navbar-inverse navbar-fixed-left">
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -18,7 +18,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("The Dress Hunt", "Home", "Index", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("The Dress Hunt", "Home", "", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
@@ -27,8 +27,14 @@
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
                     @if (User.IsInRole("Admin"))
                     {
-                        <li>@Html.ActionLink("Add-Role", "Index", "Game")</li>
+                        <li>@Html.ActionLink("Add-Role", "Index", "Role")</li>
+                        <li>@Html.ActionLink("ViewShops", "Index", "Shop")</li>
+                        <li>@Html.ActionLink("Dress", "Index", "Dress")</li>
 
+                    }
+                    else
+                    {
+                        <li>@Html.ActionLink("Hunt", "Index", "Hunt")</li>
                     }
 
                 </ul>

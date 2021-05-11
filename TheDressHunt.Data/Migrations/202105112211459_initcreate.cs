@@ -3,7 +3,7 @@ namespace TheDressHunt.Data.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class initial : DbMigration
+    public partial class initcreate : DbMigration
     {
         public override void Up()
         {
@@ -23,6 +23,7 @@ namespace TheDressHunt.Data.Migrations
                     {
                         ShopId = c.Int(nullable: false),
                         DressId = c.Int(nullable: false),
+                        DressSize = c.String(),
                     })
                 .PrimaryKey(t => new { t.ShopId, t.DressId })
                 .ForeignKey("dbo.Dress", t => t.DressId, cascadeDelete: true)

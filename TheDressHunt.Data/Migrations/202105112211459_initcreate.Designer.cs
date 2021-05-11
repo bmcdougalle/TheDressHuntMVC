@@ -7,13 +7,13 @@ namespace TheDressHunt.Data.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class initial : IMigrationMetadata
+    public sealed partial class initcreate : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(initial));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(initcreate));
         
         string IMigrationMetadata.Id
         {
-            get { return "202105062304447_initial"; }
+            get { return "202105112211459_initcreate"; }
         }
         
         string IMigrationMetadata.Source

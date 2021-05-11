@@ -1,0 +1,57 @@
+﻿@model IEnumerable<TheDressHunt.Models.TheShop.ShopListItem>
+
+@{
+    ViewBag.Title = "ViewShops";
+}
+
+<h2>All Available Shops</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ShopId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Location)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HoursOfOperation)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DressId)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ShopId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Location)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HoursOfOperation)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DressId)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>

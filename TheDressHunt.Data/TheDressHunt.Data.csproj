@@ -60,9 +60,9 @@
     <Compile Include="DressShop.cs" />
     <Compile Include="Hunt.cs" />
     <Compile Include="IdentityModels.cs" />
-    <Compile Include="Migrations\202105062304447_initial.cs" />
-    <Compile Include="Migrations\202105062304447_initial.Designer.cs">
-      <DependentUpon>202105062304447_initial.cs</DependentUpon>
+    <Compile Include="Migrations\202105112211459_initcreate.cs" />
+    <Compile Include="Migrations\202105112211459_initcreate.Designer.cs">
+      <DependentUpon>202105112211459_initcreate.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -75,8 +75,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202105062304447_initial.resx">
-      <DependentUpon>202105062304447_initial.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202105112211459_initcreate.resx">
+      <DependentUpon>202105112211459_initcreate.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
