@@ -20,7 +20,7 @@ namespace TheDressHunt.Data
         public int? Age { get; set; }
         public bool? HasHunted { get; set; }
 
-        //public int HuntId { get; set; }
+        public int? HuntId { get; set; }
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
         {
             // Note the authenticationType must match the one defined in CookieAuthenticationOptions.AuthenticationType
@@ -47,7 +47,7 @@ namespace TheDressHunt.Data
         public DbSet<TeamHunt> TeamHunts { get; set; }
         public DbSet<Review> Reviews { get; set; }
         public DbSet<Dress> Dresses { get; set; }
-
+        public DbSet<DressShop> DressShops { get; set; }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder
@@ -58,6 +58,12 @@ namespace TheDressHunt.Data
                 .Configurations
                 .Add(new IdentityUserLoginConfiguration())
                 .Add(new IdentityUserRoleConfiguration());
+
+            //modelBuilder.Entity<Shop>()
+            //    .HasMany(c => c.DressSizes).WithMany(i => (System.Collections.Generic.ICollection<Shop>)i.Shop)
+            //    .Map(t => t.MapLeftKey("ShopId")
+            //    .MapRightKey("DressId")
+            //    .ToTable("DressShop"));
         }
     }
 

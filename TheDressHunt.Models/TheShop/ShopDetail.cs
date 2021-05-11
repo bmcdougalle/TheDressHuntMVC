@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TheDressHunt.Data;
+using TheDressHunt.Models.TheDress;
 
 namespace TheDressHunt.Models.TheShop
 {
@@ -24,6 +25,9 @@ namespace TheDressHunt.Models.TheShop
         [Display(Name = "Occasion")]
         public string TypeOfOccasion { get; set; }
 
+        public int? DressId { get; set; }
+
+        //public virtual DressListItem DressSize { get; set; }
         public ICollection<Dress> DressSize { get; set; }
     }
 }

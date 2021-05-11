@@ -8,17 +8,18 @@ using System.Threading.Tasks;
 
 namespace TheDressHunt.Data
 {
-    public class Dress
+    public class DressShop
     {
-        [Key]
+        [Key, Column(Order = 0)]
+        [ForeignKey(nameof(Shop))]
+        public int ShopId { get; set; }
+        public virtual Shop Shop { get; set; }
+
+        [Key, Column(Order = 1)]
+        [ForeignKey(nameof(Dress))]
         public int DressId { get; set; }
-        public Guid OwnerId { get; set; }
+        public virtual Dress Dress { get; set; }
 
-        [Display(Name = "Dress Size")]
         public string DressSize { get; set; }
-
-        //[ForeignKey(nameof(Shops))]
-        //public int? ShopId { get; set; }
-        public virtual ICollection<DressShop> Shops { get; set; } = new List<DressShop>();
     }
 }

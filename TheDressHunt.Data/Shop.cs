@@ -35,14 +35,13 @@ namespace TheDressHunt.Data
 
         //public bool IsPlusSizeFriendly { get; set; }
 
-        [Required]
-        [Display(Name = "Available Dress sizes")]
-        public List<Dress> DressSizes { get; set; } = new List<Dress>();
+        //[Required]
+        //[Display(Name = "Available Dress sizes")]
+        //public List<Dress> DressSizes { get; set; } = new List<Dress>();
 
-        [ForeignKey(nameof(Dress))]
-        public int DressId { get; set; }
-
-        public virtual Dress Dress { get; set; }
+        //[ForeignKey(nameof(DressSizes))]
+        //public int? DressId { get; set; }
+        public virtual ICollection<DressShop> DressSizes { get; set; } = new List<DressShop>();
 
     }
 }

@@ -19,7 +19,7 @@ namespace TheDressHunt.Service
             _userId = userId;
         }
 
-        public bool CreatHunt(CreateHunt model)
+        public bool CreateHunt(CreateHunt model)
         {
             var entity =
                 new Hunt()
@@ -30,9 +30,14 @@ namespace TheDressHunt.Service
                     ColorScheme = model.ColorScheme,
                     TypeOfOccasion = model.TypeOfOccasion,
                     DressType = model.DressType,
-                    TeamId = model.TeamId
+                    TeamId = model.TeamId,
+                    TeamHunt = model.TeamHunt,
+                    Shop = model.Shop,
+                    ShopId = model.ShopId
 
                 };
+
+            
 
             using(var ctx = new ApplicationDbContext())
             {

@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TheDressHunt.Models.TheDress;
 
 namespace TheDressHunt.Models.TheShop
 {
@@ -19,5 +20,10 @@ namespace TheDressHunt.Models.TheShop
 
         [Display(Name = "Hours Of Operation")]
         public string HoursOfOperation { get; set; }
+
+        public int? DressId { get; set; }
+
+        [Display(Name = "Available Dress Sizes")]
+        public List<DressListItem> DressSizes { get; set; } = new List<DressListItem>();
     }
 }

@@ -8,23 +8,27 @@ namespace TheDressHunt.Data.Migrations
         public override void Up()
         {
             CreateTable(
-                "dbo.Hunt",
+                "dbo.Dress",
                 c => new
                     {
-                        HuntId = c.Int(nullable: false, identity: true),
+                        DressId = c.Int(nullable: false, identity: true),
                         OwnerId = c.Guid(nullable: false),
-                        ShopId = c.Int(),
-                        DateofHunt = c.DateTime(nullable: false),
-                        CreatedUtc = c.DateTimeOffset(nullable: false, precision: 7),
-                        ModifiedUtc = c.DateTimeOffset(precision: 7),
-                        TypeOfOccasion = c.String(nullable: false, maxLength: 25),
-                        DressType = c.String(nullable: false, maxLength: 25),
-                        ColorScheme = c.String(nullable: false, maxLength: 40),
-                        City = c.String(),
+                        DressSize = c.String(),
                     })
-                .PrimaryKey(t => t.HuntId)
-                .ForeignKey("dbo.Shop", t => t.ShopId)
-                .Index(t => t.ShopId);
+                .PrimaryKey(t => t.DressId);
+            
+            CreateTable(
+                "dbo.DressShop",
+                c => new
+                    {
+                        ShopId = c.Int(nullable: false),
+                        DressId = c.Int(nullable: false),
+                    })
+                .PrimaryKey(t => new { t.ShopId, t.DressId })
+                .ForeignKey("dbo.Dress", t => t.DressId, cascadeDelete: true)
+                .ForeignKey("dbo.Shop", t => t.ShopId, cascadeDelete: true)
+                .Index(t => t.ShopId)
+                .Index(t => t.DressId);
             
             CreateTable(
                 "dbo.Shop",
@@ -36,11 +40,39 @@ namespace TheDressHunt.Data.Migrations
                         Location = c.String(nullable: false, maxLength: 200),
                         HoursOfOperation = c.String(nullable: false),
                         TypeOfOccasion = c.String(),
-                        Hunt_HuntId = c.Int(),
                     })
-                .PrimaryKey(t => t.ShopId)
-                .ForeignKey("dbo.Hunt", t => t.Hunt_HuntId)
-                .Index(t => t.Hunt_HuntId);
+                .PrimaryKey(t => t.ShopId);
+            
+            CreateTable(
+                "dbo.Hunt",
+                c => new
+                    {
+                        HuntId = c.Int(nullable: false, identity: true),
+                        OwnerId = c.Guid(nullable: false),
+                        ShopId = c.Int(),
+                        DateofHunt = c.DateTime(nullable: false),
+                        TeamId = c.Int(),
+                        CreatedUtc = c.DateTimeOffset(nullable: false, precision: 7),
+                        ModifiedUtc = c.DateTimeOffset(precision: 7),
+                        TypeOfOccasion = c.String(nullable: false, maxLength: 25),
+                        DressType = c.String(nullable: false, maxLength: 25),
+                        ColorScheme = c.String(nullable: false, maxLength: 40),
+                        City = c.String(),
+                    })
+                .PrimaryKey(t => t.HuntId)
+                .ForeignKey("dbo.Shop", t => t.ShopId)
+                .ForeignKey("dbo.TeamHunt", t => t.TeamId)
+                .Index(t => t.ShopId)
+                .Index(t => t.TeamId);
+            
+            CreateTable(
+                "dbo.TeamHunt",
+                c => new
+                    {
+                        TeamId = c.Int(nullable: false, identity: true),
+                        TeamName = c.String(nullable: false, maxLength: 100),
+                    })
+                .PrimaryKey(t => t.TeamId);
             
             CreateTable(
                 "dbo.Review",
@@ -81,27 +113,15 @@ namespace TheDressHunt.Data.Migrations
                 .Index(t => t.ApplicationUser_Id);
             
             CreateTable(
-                "dbo.TeamHunt",
-                c => new
-                    {
-                        TeamId = c.Int(nullable: false, identity: true),
-                        TeamName = c.String(nullable: false, maxLength: 100),
-                        DateOfHunt = c.DateTime(nullable: false),
-                        HuntId = c.Int(nullable: false),
-                    })
-                .PrimaryKey(t => t.TeamId)
-                .ForeignKey("dbo.Hunt", t => t.HuntId, cascadeDelete: true)
-                .Index(t => t.HuntId);
-            
-            CreateTable(
                 "dbo.ApplicationUser",
                 c => new
                     {
                         Id = c.String(nullable: false, maxLength: 128),
                         Name = c.String(),
                         Location = c.String(),
-                        Age = c.Int(nullable: false),
-                        HasHunted = c.Boolean(nullable: false),
+                        Age = c.Int(),
+                        HasHunted = c.Boolean(),
+                        HuntId = c.Int(),
                         Email = c.String(),
                         EmailConfirmed = c.Boolean(nullable: false),
                         PasswordHash = c.String(),
@@ -150,26 +170,30 @@ namespace TheDressHunt.Data.Migrations
             DropForeignKey("dbo.IdentityUserRole", "ApplicationUser_Id", "dbo.ApplicationUser");
             DropForeignKey("dbo.IdentityUserLogin", "ApplicationUser_Id", "dbo.ApplicationUser");
             DropForeignKey("dbo.IdentityUserClaim", "ApplicationUser_Id", "dbo.ApplicationUser");
-            DropForeignKey("dbo.TeamHunt", "HuntId", "dbo.Hunt");
             DropForeignKey("dbo.IdentityUserRole", "IdentityRole_Id", "dbo.IdentityRole");
-            DropForeignKey("dbo.Shop", "Hunt_HuntId", "dbo.Hunt");
+            DropForeignKey("dbo.Hunt", "TeamId", "dbo.TeamHunt");
             DropForeignKey("dbo.Hunt", "ShopId", "dbo.Shop");
+            DropForeignKey("dbo.DressShop", "ShopId", "dbo.Shop");
+            DropForeignKey("dbo.DressShop", "DressId", "dbo.Dress");
             DropIndex("dbo.IdentityUserLogin", new[] { "ApplicationUser_Id" });
             DropIndex("dbo.IdentityUserClaim", new[] { "ApplicationUser_Id" });
-            DropIndex("dbo.TeamHunt", new[] { "HuntId" });
             DropIndex("dbo.IdentityUserRole", new[] { "ApplicationUser_Id" });
             DropIndex("dbo.IdentityUserRole", new[] { "IdentityRole_Id" });
-            DropIndex("dbo.Shop", new[] { "Hunt_HuntId" });
+            DropIndex("dbo.Hunt", new[] { "TeamId" });
             DropIndex("dbo.Hunt", new[] { "ShopId" });
+            DropIndex("dbo.DressShop", new[] { "DressId" });
+            DropIndex("dbo.DressShop", new[] { "ShopId" });
             DropTable("dbo.IdentityUserLogin");
             DropTable("dbo.IdentityUserClaim");
             DropTable("dbo.ApplicationUser");
-            DropTable("dbo.TeamHunt");
             DropTable("dbo.IdentityUserRole");
             DropTable("dbo.IdentityRole");
             DropTable("dbo.Review");
-            DropTable("dbo.Shop");
+            DropTable("dbo.TeamHunt");
             DropTable("dbo.Hunt");
+            DropTable("dbo.Shop");
+            DropTable("dbo.DressShop");
+            DropTable("dbo.Dress");
         }
     }
 }

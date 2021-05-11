@@ -1,0 +1,90 @@
+﻿@model TheDressHunt.Models.TheHunt.HuntDetail
+
+@{
+    ViewBag.Title = "Detail";
+}
+
+<h2>Detail</h2>
+
+<div>
+    <h4>HuntDetail</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.HuntId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HuntId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.City)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.City)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TypeOfOccasion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TypeOfOccasion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DressType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DressType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ColorScheme)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ColorScheme)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CreatedUtc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreatedUtc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateOfHunt)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateOfHunt)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ShopId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ShopId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TeamId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TeamId)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

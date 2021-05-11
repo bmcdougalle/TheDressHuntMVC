@@ -173,10 +173,12 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\HuntController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\ReviewController.cs" />
     <Compile Include="Controllers\RoleController.cs" />
     <Compile Include="Controllers\ShopController.cs" />
+    <Compile Include="Controllers\TeamHuntController.cs" />
     <Compile Include="Controllers\UsersController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -347,11 +349,26 @@
     <Content Include="Scripts\popper.js.map" />
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
+    <Content Include="Views\Review\CreateReview.cshtml" />
+    <Content Include="Views\Shop\Create.cshtml" />
+    <Content Include="Views\Shop\Detail.cshtml" />
+    <Content Include="Views\Shop\Delete.cshtml" />
+    <Content Include="Views\Shop\Edit.cshtml" />
+    <Content Include="Views\Review\Edit.cshtml" />
+    <Content Include="Views\Review\Detail.cshtml" />
+    <Content Include="Views\Review\Delete.cshtml" />
+    <Content Include="Views\TeamHunt\Create.cshtml" />
+    <Content Include="Views\TeamHunt\Delete.cshtml" />
+    <Content Include="Views\TeamHunt\Edit.cshtml" />
+    <Content Include="Views\TeamHunt\Detail.cshtml" />
+    <Content Include="Views\TeamHunt\Index.cshtml" />
+    <Content Include="Views\Hunt\Create.cshtml" />
+    <Content Include="Views\Hunt\Delete.cshtml" />
+    <Content Include="Views\Hunt\Detail.cshtml" />
+    <Content Include="Views\Hunt\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Review\" />
-    <Folder Include="Views\Shop\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

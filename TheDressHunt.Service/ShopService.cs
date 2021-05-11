@@ -26,7 +26,7 @@ namespace TheDressHunt.Service
                     Name = model.Name,
                     Location = model.Location,
                     HoursOfOperation = model.HoursOfOepration,
-                    DressSizes = model.DressSizes
+                    DressSizes = (ICollection<DressShop>)model.DressSizes
 
                 };
             using (var ctx = new ApplicationDbContext())
@@ -72,7 +72,7 @@ namespace TheDressHunt.Service
                         Name = entity.Name,
                         Location = entity.Location,
                         HoursOfOperation = entity.HoursOfOperation,
-                        DressSize = entity.DressSizes,
+                        DressSize = (ICollection<Dress>)(Models.TheDress.DressListItem)entity.DressSizes,
                         TypeOfOccasion = entity.TypeOfOccasion
                     };
             }
@@ -90,7 +90,7 @@ namespace TheDressHunt.Service
                 entity.Name = model.Name;
                 entity.Location = model.Location;
                 entity.HoursOfOperation = model.HoursOfOperation;
-                entity.DressSizes = model.DressSizeAvailable;
+                entity.DressSizes = (ICollection<DressShop>)model.DressSizeAvailable;
 
                 return ctx.SaveChanges() == 1;
             }

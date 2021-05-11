@@ -26,8 +26,7 @@ namespace TheDressHunt.Models.TheShop
 
         [Required]
         public string HoursOfOperation { get; set; }
-        public int DressId { get; set; }
-        public List<Dress> DressSizeAvailable { get; set; } = new List<Dress>();
-        public virtual Dress Dress { get; set; }
+        public int? DressId { get; set; }
+        public virtual List<Dress> DressSizeAvailable { get; set; } = new List<Dress>();
     }
 }
